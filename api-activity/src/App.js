@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Modal from "react-modal";
+import ReactStars from "react-stars";
 
 Modal.setAppElement("#root");
 
@@ -48,7 +49,10 @@ const Item = ({ itemInfo }) => {
         <img className="ItemImage" src={itemInfo.image} alt={itemInfo.title} />
         <h1>{itemInfo.title}</h1>
         <h1>£{itemInfo.price}</h1>
-        <h2>Rating :{itemInfo.rating.rate}</h2>
+        <div className="rating">
+          <ReactStars value={itemInfo.rating.rate} size={24} edit={false} />
+          <h2>{itemInfo.rating.rate}</h2>
+        </div>
         <h3>Total reviews : {itemInfo.rating.count}</h3>
         <p>Description : {itemInfo.description}</p>
         <p>Category : {itemInfo.category}</p>
