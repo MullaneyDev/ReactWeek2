@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Modal from "react-modal";
 import ReactStars from "react-stars";
+import styled from "styled-components";
 
 Modal.setAppElement("#root");
 
@@ -19,8 +20,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>El Yunque</h1>
-      <h3>Amazons' baby cousin</h3>
+      <Header>
+        <h1>El Yunque</h1>
+        <h3>Amazons' baby cousin</h3>
+      </Header>
       <div className="ItemWindow">
         {shopItems.map((currentItem, index) => {
           return <Item key={index} itemInfo={currentItem} />;
@@ -61,3 +64,10 @@ const Item = ({ itemInfo }) => {
   );
 };
 export default App;
+
+const Header = styled.header`
+  border: solid;
+  border-radius: 5px;
+  background-color: palegreen;
+  margin: 5px;
+`;

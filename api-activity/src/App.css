@@ -17,6 +17,7 @@
   border: solid;
   border-radius: 10px;
   padding: 5px;
+  background-color: white;
 }
 .Item:hover {
   background-color: palegreen;
